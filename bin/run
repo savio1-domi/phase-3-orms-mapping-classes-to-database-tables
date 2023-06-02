@@ -1,7 +1,12 @@
 #!/usr/bin/env ruby 
 
 require 'pry'
-require_relative '../config/environment'
-
 binding.pry
 "pls"
+DB = {conn: SQLite3::Database.new("db/musicdb")}
+require_relative '../config/environment'
+
+
+hello = Song.new(name: "Hello", album: "25")
+
+hello.save
